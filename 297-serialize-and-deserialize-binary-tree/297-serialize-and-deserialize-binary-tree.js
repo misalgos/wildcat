@@ -13,13 +13,13 @@
  * @return {string}
  */
 var serialize = function(root) {
-    const res = [];
+    let res = [];
     function dfs(node) {
         if(!node) {
             res.push('null');
             return;
         }
-        res.push(String(node.val));
+        res.push(Number(node.val));
         dfs(node.left);
         dfs(node.right);
     }
@@ -36,7 +36,7 @@ var serialize = function(root) {
 var deserialize = function(data) {
     let i = 0;
     function dfs() {
-        if(data[i]==='null') {
+        if(data[i] === 'null') {
             i++;
             return null;
         }
@@ -47,7 +47,7 @@ var deserialize = function(data) {
         return node;
     }
     return dfs();
-}
+};
 
 /**
  * Your functions will be called as such:
