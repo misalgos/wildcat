@@ -13,7 +13,7 @@
  * @return {string}
  */
 var serialize = function(root) {
-    let res = [];
+    const res = [];
     function dfs(node) {
         if(!node) {
             res.push('null');
@@ -24,7 +24,7 @@ var serialize = function(root) {
         dfs(node.right);
     }
     dfs(root);
-    return res;
+    return res; 
 };
 
 /**
@@ -34,7 +34,7 @@ var serialize = function(root) {
  * @return {TreeNode}
  */
 var deserialize = function(data) {
-    let i = 0;
+    let i = 0; 
     function dfs() {
         if(data[i] === 'null') {
             i++;
