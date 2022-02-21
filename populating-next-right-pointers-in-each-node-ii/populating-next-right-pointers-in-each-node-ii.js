@@ -13,7 +13,7 @@
  * @return {Node}
  */
 var connect = function(root) {
-    if(!root) return null;
+    if(!root) return root;
     const queue = [root];
     while(queue.length) {
         const size = queue.length;
