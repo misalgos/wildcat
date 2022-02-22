@@ -3,37 +3,27 @@
  * @return {string}
  */
 var decodeString = function(s) {
-    /*Holds the number of appearances of  each sequence*/
     const numStack = [];
-/*  - Holds the sequences we see aloing the way.
-    - If we see '[', we start a new sequence
-    - If we see ']', we end the latest sequence and add the result to the previous string,
-      which holds the inside-sequence that we just calculated. */
-    const seqStack = [''];
+    const seqStack  = [''];
     for(let i = 0; i < s.length; i++) {
-/*  - If we see a number we push the full number and continue. */
+          console.log(numStack);
         let c = s[i];
-        if(c >= 0 && c <=9) {
-            console.log('c', c);
+        if(c >= 0 && c <= 9) {
             while(s[i+1] >= 0 && s[i+1] <= 9) {
-                console.log('s[i+1]', s[i+1]);
                 c += s[i+1];
                 i++;
             }
             numStack.push(c);
             continue;
-        } 
-/*      If we see '[', we start a new sequence. */
-        if(c === '[') {
-            seqStack.push('');
-        } else if( c === ']') {
-/*   - If we see ']', we take the latest number and multiply by the latest sequence and add that to the previous sequence. */
+        }
+        if(c === '[')  {
+             seqStack.push('');
+        } else if(c === ']') {
             const num = numStack.pop();
-            const latestSeq = seqStack.pop();
-            const seq = latestSeq.repeat(num);
-            seqStack[seqStack.length-1] += seq;
+            const seq = seqStack.pop();
+            seqStack[seqStack.length-1] += seq.repeat(num);
+          
         } else {
-/*    - If we see a char, we add it to the latest sequence.    */
             seqStack[seqStack.length-1] += c;
         }
     }
