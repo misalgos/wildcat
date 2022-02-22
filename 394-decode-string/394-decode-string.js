@@ -14,7 +14,9 @@ var decodeString = function(s) {
 /*  - If we see a number we push the full number and continue. */
         let c = s[i];
         if(c >= 0 && c <=9) {
+            console.log('c', c);
             while(s[i+1] >= 0 && s[i+1] <= 9) {
+                console.log('s[i+1]', s[i+1]);
                 c += s[i+1];
                 i++;
             }
