@@ -1,8 +1,7 @@
 class Solution {
 public:
-   int trap(vector<int>& height)
-{
-    int ans = 0, current = 0;
+    int trap(vector<int>& height)  {
+        int ans = 0, current = 0;
     stack<int> st;
     while (current < height.size()) {
         while (!st.empty() && height[current] > height[st.top()]) {
@@ -17,5 +16,5 @@ public:
         st.push(current++);
     }
     return ans;
-}
+    }  
 };
