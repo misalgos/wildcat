@@ -7,8 +7,7 @@ public:
         while (!st.empty() && height[current] > height[st.top()]) {
             int top = st.top();
             st.pop();
-            if (st.empty())
-                break;
+            if (st.empty()) break;
             int distance = current - st.top() - 1;
             int bounded_height = min(height[current], height[st.top()]) - height[top];
             ans += distance * bounded_height;
