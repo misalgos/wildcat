@@ -4,7 +4,7 @@
  */
 var trap = function(height) {
     const stack = [];
-    let result = 0;
+    let result = 0; 
     for(let i = 0; i < height.length; i++) {
         while(stack.length && height[stack[stack.length-1]] < height[i]) {
             const idx = stack.pop();
