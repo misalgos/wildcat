@@ -10,6 +10,7 @@ public:
                 if(st.empty()) break;
                 int distance = current - st.top() - 1;
                 int bh = min(height[current], height[st.top()]) - height[top];
+                cout<<"height[current] "<<height[current]<<"   height[st.top()] "<<height[st.top()]<<endl;
                 ans += distance * bh; 
             }
             st.push(current++);
