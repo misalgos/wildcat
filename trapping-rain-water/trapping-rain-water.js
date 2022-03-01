@@ -11,7 +11,7 @@ var trap = function(height) {
             if(!stack.length) break;
             const currWidth = i - stack[stack.length-1] - 1;
             const currHeight = Math.min(height[stack[stack.length-1]], height[i]) - height[wallIdx];
-            area += currWidth * currHeight;
+            area += currHeight * currWidth;
         }
         stack.push(i);
     }
