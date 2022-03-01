@@ -3,15 +3,17 @@
  * @return {boolean}
  */
 var isValid = function(s) {
-    const stack = [];
-    let comp = new Map([['(',')'], ['[', ']'], ['{', '}']]);
+    const stack  = [];
+    const comps = new Map([
+        "{}".split(''),
+        "()".split(''),
+        "[]".split(''),
+    ]);
     for(const c of s) {
-        if(comp.has(c)) {
+        if(comps.get(c)) {
             stack.push(c);
-        } else  {
-            if(c !== comp.get(stack.pop())) {
-                return false;
-            }
+        } else if(c !== comps.get(stack.pop())) {
+            return false;
         }
     }
     return !stack.length;
