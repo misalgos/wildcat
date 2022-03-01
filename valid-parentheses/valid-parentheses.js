@@ -3,14 +3,14 @@
  * @return {boolean}
  */
 var isValid = function(s) {
-    const stack  = [];
     const comps = new Map([
-        "{}".split(''),
-        "()".split(''),
-        "[]".split(''),
+        '[]'.split(''),
+        '{}'.split(''),
+        '()'.split('')
     ]);
+    const stack = [];
     for(const c of s) {
-        if(comps.get(c)) {
+        if(comps.has(c)) {
             stack.push(c);
         } else if(c !== comps.get(stack.pop())) {
             return false;
