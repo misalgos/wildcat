@@ -3,13 +3,22 @@
  * @return {number}
  */
 var minMeetingRooms = function(intervals) {
-    if(!intervals.length) return 0;
-    intervals = intervals.sort((a,b)=> a[0] - b[0]); 
-    const queue = new MinPriorityQueue();
-    queue.enqueue(intervals[0][1]);
-    for(let i = 1; i < intervals.length; i++) {
-        if(queue.front().element <= intervals[i][0]) queue.dequeue();
-        queue.enqueue(intervals[i][1]);
+    let events = [];
+    for(const [start, end] of intervals) {
+        events.push([start, 0]);
+        events.push([end - 0.1, 1]);
+     
     }
-    return queue.size();
+    events = events.sort((a,b)=> a[0]-b[0]);
+    let result = 0;
+    const stack = [];
+    for(const [event, type] of events) {
+        if(type === 1) {
+            stack.push('#');
+            result = Math.max(result, stack.length);
+        } else {
+            stack.pop();
+        }
+    }
+    return result;
 };
