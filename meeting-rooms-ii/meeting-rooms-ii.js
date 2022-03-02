@@ -24,7 +24,9 @@ var minMeetingRooms = function(intervals) {
     the rooms that were being used are freed up so that the meeting can take place there instead of having 
     to get an additional room thus adding to the total amount of rooms that have to be used.
     
-    For more information: 
+    Scheduling algorithms are  useful for logistics, operations, and even cpu resource allocation.  
+
+    For more information see the links related to the following one: 
     https://en.wikipedia.org/wiki/Interval_scheduling
     */
         let isFreed = false;
