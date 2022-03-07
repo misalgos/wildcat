@@ -16,8 +16,11 @@ var findMedianSortedArrays = function(nums1, nums2) {
         let nums2Right = mid2 == nums2.length ? Infinity : nums2[mid2];
         if(nums1Left <= nums2Right && nums2Left <= nums1Right) { 
             if((nums1.length + nums2.length) % 2 === 0) {
+            //
+            //
                 return (Math.max(nums1Left, nums2Left) + Math.min(nums1Right, nums2Right))/2;
             } else {
+            //
             //
                 return Math.max(nums1Left, nums2Left);
             }
@@ -30,3 +33,38 @@ var findMedianSortedArrays = function(nums1, nums2) {
         }
     }
 };
+
+/*
+
+
+[ 1, 2, 3, 4, 5, 6, 7, 8 ] - len = 8
+
+
+
+        
+[ 1, 2, 3, 4, 5 ] - len = 5
+
+
+
+[ 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 7, 8 ] - len = 13
+
+
+
+
+
+[ 3 ]
+ 
+[ 1, 2, 4, 5, 6 ]
+
+
+
+
+
+
+
+
+
+*/
+
+
+
