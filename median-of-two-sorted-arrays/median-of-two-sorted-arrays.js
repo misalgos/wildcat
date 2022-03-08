@@ -9,7 +9,7 @@ var findMedianSortedArrays = function(numsA, numsB) {
     }
     let left = 0, right = numsA.length;
     while (left <= right) {
-        const midA = Math.floor((left + right) / 2);
+        const midA = Math.floor(left + (right - left) / 2);
         const midB = Math.floor((numsA.length + numsB.length + 1) / 2) - midA;
         //Boundaries:
         const leftA = midA === 0 ? -Infinity : numsA[midA-1];
