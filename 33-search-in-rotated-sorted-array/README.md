@@ -22,9 +22,9 @@
 
 <ul>
 	<li><code>1 &lt;= nums.length &lt;= 5000</code></li>
-	<li><code>-10<sup>4</sup> &lt;= nums[i] &lt;= 10<sup>4</sup></code></li>
+	<li><code>-10<sup style="">4</sup> &lt;= nums[i] &lt;= 10<sup style="">4</sup></code></li>
 	<li>All values of <code>nums</code> are <strong>unique</strong>.</li>
 	<li><code>nums</code> is an ascending array that is possibly rotated.</li>
-	<li><code>-10<sup>4</sup> &lt;= target &lt;= 10<sup>4</sup></code></li>
+	<li><code>-10<sup style="">4</sup> &lt;= target &lt;= 10<sup style="">4</sup></code></li>
 </ul>
 </div>
