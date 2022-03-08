@@ -25,7 +25,7 @@ var findMedianSortedArrays = function(numsA, numsB) {
         }
         if (leftA > rightB) {
             right = midA - 1; 
-        } else {
+        } else if (leftB > rightA) {
             left = midA + 1;
         }
     }
