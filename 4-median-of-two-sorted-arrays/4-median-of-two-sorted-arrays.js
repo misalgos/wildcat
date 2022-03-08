@@ -43,7 +43,7 @@ var findMedianSortedArrays = function(numsA, numsB) {
                     [leftA, rightA]->((rightMostLeft + leftMostRight)/2) <- [leftB, rightB]
                     e.g.... merged = [leftA, leftB, rightA, rightB], median = (leftB + rightA) / 2
                 */
-                   return (Math.max(leftA, leftB) + Math.min(rightA, rightB)) / 2;
+                return (Math.max(leftA, leftB) + Math.min(rightA, rightB)) / 2;
             } else {
                 /*If it's odd, return the largest left among both arrays because one of the lefts is at the midpoint and one is at midpoint-1 of
                 the merged arrays*/
