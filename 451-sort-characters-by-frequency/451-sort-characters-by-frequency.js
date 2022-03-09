@@ -3,9 +3,9 @@
  * @return {string}
  */
 var frequencySort = function(s) {
-    const charCount = new Map();
+    const chars = new Map();
     for (const c of s) {
-        charCount.set(c, charCount.get(c) + 1 || 1);
+        chars.set(c, chars.get(c)+1 || 1);
     }
-    return [...charCount].sort((a,b)=> b[1] - a[1]).map((c)=> c[0].repeat(c[1])).join('');
+    return [...chars].sort((a,b)=> b[1] - a[1]).map((c)=> c[0].repeat(c[1])).join('');
 };
