@@ -18,6 +18,8 @@ var maxSubArray = function(nums) {
             prevMax += nums[i];
         }
         maxSum = Math.max(maxSum, prevMax);
+        
+        /*Can be shortened to simply prevMax = Math.max(nums[i]+ prevMax, nums[i])*/
     }
     return maxSum;
 };
