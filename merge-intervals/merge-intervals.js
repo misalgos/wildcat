@@ -4,13 +4,13 @@
  */
 var merge = function(intervals) {
     intervals = intervals.sort((a,b)=> a[0] - b[0]);
-    const merged = [intervals[0]];
+    const sorted = [intervals[0]];
     for (let i = 1; i < intervals.length; i++) {
-        if (intervals[i][0] <= merged[merged.length-1][1]) {
-            merged[merged.length-1][1] = Math.max(merged[merged.length-1][1], intervals[i][1]);
+        if (intervals[i][0] <= sorted[sorted.length-1][1]) {
+            sorted[sorted.length-1][1] = Math.max(intervals[i][1], sorted[sorted.length-1][1]);
         } else {
-            merged.push(intervals[i]);
+            sorted.push(intervals[i]);
         }
     }
-    return merged;
+    return sorted;
 };
