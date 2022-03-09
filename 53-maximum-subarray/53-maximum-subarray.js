@@ -12,12 +12,8 @@ var maxSubArray = function(nums) {
     //The max sum for the sequence ending in the last element of the input read so far
     let prevMax = nums[0]
     for (let i = 1; i < n; i++) {
-        if (prevMax + nums[i] < nums[i]) {
-            prevMax = nums[i];
-        } else {
-            prevMax += nums[i];
-        }
-        maxSum = Math.max(maxSum, prevMax);
+        prevMax = Math.max(prevMax+nums[i], nums[i]);//Whether to include the previous sequence or just the current number.
+        maxSum = Math.max(maxSum, prevMax); //the max sum is updated to be the greatest one seen so far.
         
         /*Can be shortened to simply prevMax = Math.max(nums[i]+ prevMax, nums[i])*/
     }
