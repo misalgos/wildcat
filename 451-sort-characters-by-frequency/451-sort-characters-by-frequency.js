@@ -7,5 +7,14 @@ var frequencySort = function(s) {
     for (const c of s) {
         chars.set(c, chars.get(c)+1 || 1);
     }
-    return [...chars].sort((a,b)=> b[1] - a[1]).map((c)=> c[0].repeat(c[1])).join('');
+    const heap = new MaxPriorityQueue();
+    for (const [c, count] of chars) {
+        heap.enqueue(c, count);
+    }
+    let sortedStr = '';
+    while (!heap.isEmpty()) {
+        sortedStr += heap.front().element.repeat(heap.front().priority);
+        heap.dequeue();
+    }
+    return sortedStr;
 };
