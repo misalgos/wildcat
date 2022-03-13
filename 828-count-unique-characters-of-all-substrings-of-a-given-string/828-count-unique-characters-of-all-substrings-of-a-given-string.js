@@ -4,20 +4,20 @@
  */
 var uniqueLetterString = function(s) {
     let currUniques = 0;
-    let lastSeen = new Map();
-    let contributions = new Map();
-    let answer = 0;
-    for (let x = 0; x < s.length; x++) {
-        const char = s[x];
-        const prevContributions = contributions.has(char) ? contributions.get(char) : 0;
-        const newContributions = x + 1 - (lastSeen.has(char) ? lastSeen.get(char) + 1 : 0);
+    let lastPos = new Map();
+    let contr = new Map();
+    let result = 0;
+    for (let i = 0; i < s.length; i++) {
+        const c = s[i];
+        const prevContr = contr.has(c) ? contr.get(c) : 0;
+        const newContr = i + 1 - (lastPos.has(c) ? lastPos.get(c) + 1 : 0);
         
-        currUniques = currUniques - prevContributions + newContributions;
+        currUniques = currUniques - prevContr + newContr
         
-        contributions.set(char, newContributions);
-        lastSeen.set(char, x);
+        contr.set(c, newContr);
+        lastPos.set(c, i);
         
-        answer += currUniques;
+        result += currUniques;
     }
-    return answer;
+    return result;
 };
