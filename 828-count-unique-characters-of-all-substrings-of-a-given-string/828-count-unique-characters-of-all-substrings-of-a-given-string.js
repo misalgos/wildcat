@@ -23,7 +23,7 @@ var uniqueLetterString = function(s) {
         const prevContr = contr.has(c) ? contr.get(c) : 0;
         const newContr = i - (lastPos.has(c) ? lastPos.get(c) + 1 : 0) + 1;
         
-        currUniques = currUniques - prevContr + newContr
+        currUniques = currUniques - prevContr + newContr;
         
         contr.set(c, newContr);
         lastPos.set(c, i);
