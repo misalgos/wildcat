@@ -4,7 +4,7 @@
  */
 var uniqueLetterString = function(s) {
     let currUniques = 0;
-    let lastPos = new Map();
+    let lastPos = new Map(); //last seen position
     let contr = new Map();
     let result = 0;
     for (let i = 0; i < s.length; i++) {
