@@ -12,7 +12,7 @@ var uniqueLetterString = function(s) {
         /*
             prevContr - the last index in which the 'contribution' of the current letter was found.
             
-            newContr - the index of the current letter plus one minus the last position in which it was seen
+            newContr - the index of the current letter minus the last position in which it was seen plus one. 
             (this is similar to the 'end - start + 1')
         */
         const prevContr = contr.has(c) ? contr.get(c) : 0;
