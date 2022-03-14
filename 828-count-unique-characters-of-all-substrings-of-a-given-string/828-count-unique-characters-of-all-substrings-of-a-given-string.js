@@ -10,12 +10,12 @@ var uniqueLetterString = function(s) {
     for (let i = 0; i < s.length; i++) {
         const c = s[i];
         /*
-            prevContr = the last index in which the 'contribution' of the current letter was found.
+            prevContr = the last window size between the previous two occurences of the current letter.
             
-            newContr = the index of the current letter minus the last position in which it was seen plus one. 
-            (this is similar to the 'end - start + 1', because it is a measurement of the window size of each letter's     occurrence),
+            newContr = the index of the current letter minus the last position in which it was last seen plus one. 
+            (this is similar to the 'end - start + 1', because it is a measurement of the window size of each letter's occurrence),
             
-            currUniques = the
+            currUniques = 
             
             
             
