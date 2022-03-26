@@ -1,5 +1,16 @@
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ */
 class BSTIterator {
-    constructor(root) {
+        constructor(root) {
         this.root = root;
         this.ptr = this.root;
         this.stack = [];
@@ -17,45 +28,12 @@ class BSTIterator {
         return this.stack.length;
     }
     next() {
-        this.ptr = this.stack.pop();
-        const val = this.ptr.val;
-        this.ptr = this.ptr.right;
+        const top = this.stack.pop();
+        this.ptr = top.right;
         this.inorder();
-        return val;
+        return top.val;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/**
- * Definition for a binary tree node.
- * function TreeNode(val, left, right) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.left = (left===undefined ? null : left)
- *     this.right = (right===undefined ? null : right)
- * }
- */
-/**
- * @param {TreeNode} root
- */
 
 /** 
  * Your BSTIterator object will be instantiated and called as such:
